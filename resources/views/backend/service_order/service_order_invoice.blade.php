@@ -109,19 +109,17 @@
     </thead>
     <tbody>
 
-     @foreach($orderItem as $item)
+     @foreach($service_orderItem as $item)
       <tr class="font">
-        <td align="center">
-            <img src="{{ public_path($item->product->product_image) }} " height="50px;" width="50px;" alt="">
-        </td>
-        <td align="center"> {{ $item->product->product_name }} </td>
+       
+        <td align="center"> {{ $item->service->service_name }} </td>
         
-        <td align="center"> {{ $item->product->product_code }} </td>
-        <td align="center"> {{ $item->quantity }} </td>
+        <td align="center"> {{ $item->service->service_code }} </td>
+        
 
          
         
-        <td align="center">${{ $item->product->selling_price }} </td>
+        <td align="center">${{ $item->service->service_selling_price }} </td>
          <td align="center">$ {{ $item->total }}</td>
       </tr>
       @endforeach

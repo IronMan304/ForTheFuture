@@ -13,11 +13,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Order Details </a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Service Order Details </a></li>
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Order Details</h4>
+                                    <h4 class="page-title">Service Order Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -40,9 +40,9 @@
         <form method="post" action="{{ route('service_order.status.update') }}" enctype="multipart/form-data">
         	@csrf
 
-            <input type="hidden" name="id" value="{{ $order->id }}">
+            <input type="hidden" name="id" value="{{ $service_order->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Order Details</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Service Order Details</h5>
 
             <div class="row">
 
@@ -50,7 +50,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Customer Image</label>
-             <img id="showImage" src="{{ asset($order->customer->image ) }}" class="rounded-circle avatar-lg img-thumbnail"
+             <img id="showImage" src="{{ asset($service_order->customer->image ) }}" class="rounded-circle avatar-lg img-thumbnail"
                 alt="profile-image">
            
         </div>
@@ -60,7 +60,7 @@
               <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Customer Name</label>
-             <p class="text-danger"> {{ $order->customer->name }} </p>
+             <p class="text-danger"> {{ $service_order->customer->name }} </p>
         </div>
     </div>
 
@@ -69,7 +69,7 @@
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Customer Email</label>
-             <p class="text-danger"> {{ $order->customer->email }} </p>
+             <p class="text-danger"> {{ $service_order->customer->email }} </p>
         </div>
     </div>
 
@@ -77,7 +77,7 @@
        <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Customer Phone</label>
-             <p class="text-danger"> {{ $order->customer->phone }} </p>
+             <p class="text-danger"> {{ $service_order->customer->phone }} </p>
         </div>
     </div>
 
@@ -85,14 +85,14 @@
   <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Order Date </label>
-             <p class="text-danger"> {{ $order->order_date }} </p>
+             <p class="text-danger"> {{ $service_order->order_date }} </p>
         </div>
     </div>
 
  <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Order Invoice </label>
-             <p class="text-danger"> {{ $order->invoice_no }} </p>
+             <p class="text-danger"> {{ $service_order->invoice_no }} </p>
         </div>
     </div>
 
@@ -102,14 +102,14 @@
    <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Payment Status </label>
-             <p class="text-danger"> {{ $order->payment_status }} </p>
+             <p class="text-danger"> {{ $service_order->payment_status }} </p>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Paid Amount </label>
-             <p class="text-danger"> {{ $order->pay }} </p>
+             <p class="text-danger"> {{ $service_order->pay }} </p>
         </div>
     </div>
  
@@ -117,7 +117,7 @@
  <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Due Amount </label>
-             <p class="text-danger"> {{ $order->due }} </p>
+             <p class="text-danger"> {{ $service_order->due }} </p>
         </div>
     </div>
  
@@ -155,14 +155,13 @@
                     
     
         <tbody>
-            @foreach($orderItem as $item)
+            @foreach($service_orderItem as $item)
             <tr>
                 
-                <td> <img src="{{ asset($item->product->product_image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item->product->product_name }}</td>
-                <td>{{ $item->product->product_code }}</td>
-                <td>{{ $item->quantity }}</td>
-                <td>{{ $item->product->selling_price }}</td>
+              
+                <td>{{ $item->service->service_name }}</td>
+                <td>{{ $item->service->service_code }}</td>
+                <td>{{ $item->service->service_selling_price }}</td>
                 <td>{{ $item->total }}</td> 
             </tr>
             @endforeach

@@ -95,10 +95,7 @@ class ServiceOrderController extends Controller
 
 
     $service = ServiceOrderdetails::where('service_order_id',$service_order_id)->get();
-        foreach($service as $item){
-           Product::where('id',$item->service_id)
-                ->update(['service_store' => DB::raw('service_store-'.$item->quantity) ]);
-        }
+        
 
      ServiceOrder::findOrFail($service_order_id)->update(['service_order_status' => 'complete']);
 
@@ -121,7 +118,7 @@ class ServiceOrderController extends Controller
 
         $service_orderItem = ServiceOrderdetails::with('service')->where('service_order_id',$service_order_id)->orderBy('id','DESC')->get();
 
-        $pdf = Pdf::loadView('backend.service_order.service_order_invoice', compact('service_order','service_orderItem'))->setPaper('a4')->setOption([
+        $pdf = Pdf::loadView('backend.service_order.service_order_invoice', compact('order','service_orderItem'))->setPaper('a4')->setOption([
                 'tempDir' => public_path(),
                 'chroot' => public_path(),
 

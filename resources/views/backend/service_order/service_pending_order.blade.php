@@ -47,7 +47,6 @@
         	@foreach($orders as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                
                 <td>{{ $item['customer']['name'] }}</td>
                 <td>{{ $item->service_order_date }}</td>
                 <td>{{ $item->service_payment_status }}</td>
@@ -55,7 +54,7 @@
                 <td>{{ $item->service_pay }}</td>
                 <td> <span class="badge bg-danger">{{ $item->service_order_status }}</span> </td>
                 <td>
-<a href="{{ route('order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Details </a> 
+<a href="{{ route('service_order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Details </a> 
 
                 </td>
             </tr>
