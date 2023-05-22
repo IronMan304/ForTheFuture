@@ -231,26 +231,44 @@
 </div>
 </li>
 
-
 <li>
 <a href="#orders" data-bs-toggle="collapse">
 <i class="mdi mdi-email-multiple-outline"></i>
-<span> Orders  </span>
+<span> Product Orders  </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="orders">
 <ul class="nav-second-level">
 <li>
-<a href="{{ route('pending.order') }}">Pending Orders </a>
+<a href="{{ route('pending.order') }}"> Pending Orders </a>
 </li>
 
 <li>
-<a href="{{ route('complete.order') }}">Complete Orders </a>
+<a href="{{ route('complete.order') }}"> Completed Orders </a>
+</li>
+
+
+
+</ul>
+</div>
 </li>
 
 <li>
-<a href="{{ route('pending.due') }}">Pending Due </a>
+<a href="#serviceorders" data-bs-toggle="collapse">
+<i class="mdi mdi-email-multiple-outline"></i>
+<span> Service Orders  </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="serviceorders">
+<ul class="nav-second-level">
+<li>
+<a href="{{ route('service_pending.order') }}"> Pending Service </a>
 </li>
+
+<li>
+<a href="{{ route('service_complete.order') }}"> Completed Service </a>
+</li>
+
 
 
 </ul>

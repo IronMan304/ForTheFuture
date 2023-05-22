@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('service_orderdetails', function (Blueprint $table) {
             $table->id();
+            $table->integer('service_order_id');
+            $table->integer('service_id');
+            $table->string('total')->nullable();
             $table->timestamps();
         });
     }

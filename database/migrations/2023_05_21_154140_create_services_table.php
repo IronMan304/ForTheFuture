@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('service_code');
             $table->string('service_garage')->nullable();
             $table->string('service_store')->nullable();
-            $table->string('avail_date')->nullable();
+            $table->string('service_order_date')->nullable();
             $table->string('avail_price')->nullable();
             $table->timestamps();
         });

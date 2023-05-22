@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
 use App\Http\Controllers\Backend\ServicePosController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ServiceOrderController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\ServiceCategoryController;
@@ -230,6 +231,9 @@ Route::controller(PosController::class)->group(function(){
 });
 
 
+
+
+
 ///ServicePos All Route 
 Route::controller(ServicePosController::class)->group(function(){
 
@@ -239,7 +243,7 @@ Route::controller(ServicePosController::class)->group(function(){
   Route::post('/cart-update/{rowId}','CartUpdate');
   Route::get('/cart-remove/{rowId}','CartRemove');
  
-  Route::post('/create-invoice','CreateInvoice');
+  Route::post('/create-service-invoice','CreateInvoice');
  
  
  });
@@ -264,6 +268,25 @@ Route::controller(OrderController::class)->group(function(){
  Route::get('/order/due/{id}','OrderDueAjax');
  Route::post('/update/due','UpdateDue')->name('update.due');
 });
+
+
+///ServiceOrder All Route 
+Route::controller(ServiceOrderController::class)->group(function(){
+
+  Route::post('service/final-invoice','ServiceFinalInvoice');
+  Route::get('service/pending/order','ServicePendingOrder')->name('service_pending.order');
+  Route::get('service/order/details/{order_id}','ServiceOrderDetails')->name('service_order.details');
+  Route::post('service/order/status/update','ServiceOrderStatusUpdate')->name('service_order.status.update');
+ 
+  Route::get('service/complete/order','ServiceCompleteOrder')->name('service_complete.order');
+ 
+  
+  Route::get('service/order/invoice-download/{service_id}','ServiceOrderInvoice');
+ 
+  //// Due All Route 
+ 
+
+ });
 
 
 ///Permission All Route 

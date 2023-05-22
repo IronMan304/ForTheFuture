@@ -17,7 +17,7 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">POS</h4>
+                                    <h4 class="page-title">Order Product</h4>
                                 </div>
                             </div>
                         </div>     

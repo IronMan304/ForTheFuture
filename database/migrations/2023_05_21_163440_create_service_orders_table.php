@@ -15,6 +15,17 @@ return new class extends Migration
     {
         Schema::create('service_orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('customer_id');
+            $table->string('service_order_date')->nullable();
+            $table->string('service_order_status');
+            $table->string('total_services');
+            $table->string('service_sub_total')->nullable();
+            $table->string('service_vat')->nullable();;
+            $table->string('service_invoice_no')->nullable();;
+            $table->string('total')->nullable();;
+            $table->string('service_payment_status')->nullable();;
+            $table->string('service_pay')->nullable();;
+            $table->string('service_due')->nullable();;
             $table->timestamps();
         });
     }

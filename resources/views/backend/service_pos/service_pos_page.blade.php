@@ -17,7 +17,7 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">POS</h4>
+                                    <h4 class="page-title">Avail Service</h4>
                                 </div>
                             </div>
                         </div>     
@@ -78,7 +78,7 @@
     </div>
 
  <br>
-    <form id="myForm" method="post" action="{{ url('/create-invoice') }}">
+    <form id="myForm" method="post" action="{{ url('/create-service-invoice') }}">
         @csrf
      
         <div class="form-group mb-3">

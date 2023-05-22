@@ -37,7 +37,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form method="post" action="{{ route('order.status.update') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('service_order.status.update') }}" enctype="multipart/form-data">
         	@csrf
 
             <input type="hidden" name="id" value="{{ $order->id }}">

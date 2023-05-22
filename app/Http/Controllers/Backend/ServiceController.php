@@ -42,7 +42,7 @@ class ServiceController extends Controller
             'service_name' => $request->service_name,
             'service_category_id' => $request->service_category_id,
             'service_code' => $scode,
-            'avail_date' => $request->avail_date,
+            'service_order_date' => $request->service_order_date,
             'avail_price' => $request->avail_price,
             'created_at' => Carbon::now(), 
 
@@ -83,7 +83,7 @@ class ServiceController extends Controller
             'service_name' => $request->service_name,
             'service_category_id' => $request->service_category_id,
             'service_code' => $request->service_code,
-            'avail_date' => $request->avail_date,
+            'service_order_date' => $request->service_order_date,
             'avail_price' => $request->avail_price,
             'created_at' => Carbon::now(), 
 
@@ -103,7 +103,7 @@ class ServiceController extends Controller
                 'service_name' => $request->service_name,
                 'service_category_id' => $request->service_category_id,
                 'service_code' => $request->service_code,
-                'avail_date' => $request->avail_date,
+                'service_order_date' => $request->service_order_date,
                 'avail_price' => $request->avail_price,
                 'created_at' => Carbon::now(), 
 

@@ -15,7 +15,7 @@
       
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Complete Orders</h4>
+                                    <h4 class="page-title">Pending Orders</h4>
                                 </div>
                             </div>
                         </div>     
@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-body">
                      
-                
+                    
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
@@ -44,37 +44,22 @@
                     
     
         <tbody>
-        @php
-    $finalTotal = 0;
-@endphp
         	@foreach($orders as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->customer->image) }}" style="width:50px; height: 40px;"> </td>
+                
                 <td>{{ $item['customer']['name'] }}</td>
-                <td>{{ $item->order_date }}</td>
-                <td>{{ $item->payment_status }}</td>
-                <td>{{ $item->invoice_no }}</td>
-                <td>{{ $item->total }}</td>
-                <td> <span class="badge bg-success">{{ $item->order_status }}</span> </td>
-                @php
-            $finalTotal += $item->total;
-        @endphp
+                <td>{{ $item->service_order_date }}</td>
+                <td>{{ $item->service_payment_status }}</td>
+                <td>{{ $item->service_invoice_no }}</td>
+                <td>{{ $item->service_pay }}</td>
+                <td> <span class="badge bg-danger">{{ $item->service_order_status }}</span> </td>
                 <td>
-<a href="{{ url('order/invoice-download/'.$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> PDF Invoice </a> 
+<a href="{{ route('order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Details </a> 
 
                 </td>
             </tr>
-            
             @endforeach
-            
-            
-            <h4 style="color:white; font-size: 30px;" align="center">Final Total: ${{ $finalTotal }}</h4>
-            $endphp
-
-            <h4 class="header-title"> Totsl Orders </h4>   
-           
-            
         </tbody>
                     </table>
 
