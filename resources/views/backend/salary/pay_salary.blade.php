@@ -42,37 +42,34 @@
                         </thead>
                     
     
-        <tbody>
-            @foreach($employee as $key=> $item)
-            <tr>
-                <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item->name }}</td>
-                <td><span class="badge bg-info"> {{ date("F", strtotime('-1 month')) }} </span> </td>
-                <td> {{ $item->salary }} </td>
-                <td>
-                    @if($item['advance']['advance_salary'] == NULL )
-                        <p>No Advance</p>
-                    @else
-                    {{ $item['advance']['advance_salary'] }}
-                    @endif
+                        <tbody>
+    @foreach($employee as $key => $item)
+        <tr>
+            <td>{{ $key+1 }}</td>
+            <td><img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"></td>
+            <td>{{ $item->name }}</td>
+            <td><span class="badge bg-info">{{ date("F", strtotime('-1 month')) }}</span></td>
+            <td>{{ $item->salary }}</td>
+            <td>
+                @if($item->advance === NULL || $item->advance['advance_salary'] === NULL)
+                    <p>No Advance</p>
+                @else
+                    {{ $item->advance['advance_salary'] }}
+                @endif
+            </td>
+            <td>
+                @php
+                $amount = $item->salary - ($item->advance !== NULL ? $item->advance['advance_salary'] : 0);
+                @endphp
+                <strong style="color: #fff;">{{ round($amount) }}</strong>
+            </td>
+            <td>
+                <a href="{{ route('pay.now.salary', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Pay Now</a>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
 
-                 </td>
-                <td>
-                    @php
-                    $amount = $item->salary - $item['advance']['advance_salary'];
-                    @endphp
-                    <strong style="color: #fff;"> {{ round($amount) }} </strong>
-
-                 </td>
-                <td>
-<a href="{{ route('pay.now.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Pay Now</a>
- 
-
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
                     </table>
 
                 </div> <!-- end card body-->

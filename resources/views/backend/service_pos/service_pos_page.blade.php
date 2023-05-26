@@ -34,13 +34,14 @@
         <table class="table table-bordered border-primary mb-0">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    
                     <th>Service</th>
                     <th>Price</th>
                     <th>SubTotal</th>
                     <th>Action</th>
                 </tr>
             </thead>
+            
 
             @php
             $allcart = Cart::content();
@@ -49,10 +50,8 @@
                 @foreach($allcart as $cart)
                 <tr>
                     <td>{{ $cart->name }}</td>
-                    @php
-        $item = $service->firstWhere('id', $cart->id);  
-         @endphp
-                    <td>{{ $item->service_name }}</td>
+                 
+                    
                    
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->price*$cart->qty }}</td>
@@ -68,7 +67,7 @@
         <br>
         
         
-        <p style="font-size:18px; color:#fff"> Service : {{ $item->service_name }}</p>
+        
         <p style="font-size:18px; color:#fff"> SubTotal : {{ Cart::subtotal() }} </p>
         <p style="font-size:18px; color:#fff"> Vat : {{ Cart::tax() }} </p>
         <p><h2 class="text-white"> Total </h2> <h1 class="text-white"> {{ Cart::total() }}</h1>   </p>
@@ -130,7 +129,6 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Image</th>
-                                <th>Category</th> 
                                 <th>Service</th> 
                                  <th> </th> 
                             </tr>
@@ -151,7 +149,6 @@
 
     <td>{{ $key+1 }}</td>
     <td> <img src="{{ asset($item->service_image) }}" style="width:50px; height: 40px;"> </td>
-    <td>{{ $item->service_category_name }}</td>
     <td>{{ $item->service_name }}</td>
     <td><button type="submit" style="font-size: 20px; color: #000;" > <i class="fas fa-plus-square"></i> </button> </td> 
 

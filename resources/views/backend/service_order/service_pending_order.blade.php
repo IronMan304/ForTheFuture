@@ -31,12 +31,11 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
+                                <th>Customer</th>
                                 <th>Order Date</th>
                                 <th>Payment</th>
                                 <th>Invoice</th>
-                                <th>Pay</th>
+                                <th>Cash</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>

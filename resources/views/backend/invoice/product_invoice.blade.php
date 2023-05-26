@@ -34,13 +34,13 @@
                 <div class="auth-logo">
                     <div class="logo logo-dark">
                         <span class="logo-lg">
-                            <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="" height="22">
+                        <img src="{{ asset('backend/assets/images/woof!-logo.jpg') }}" alt="" height="50">
                         </span>
                     </div>
 
                     <div class="logo logo-light">
                         <span class="logo-lg">
-                            <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="" height="22">
+                        <img src="{{ asset('backend/assets/images/woof!-logo.jpg') }}" alt="" height="50">
                         </span>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                 </td>
                 <td>{{ $item->qty }}</td>
                 <td>{{ $item->price }}</td>
-                <td class="text-end">${{ $item->price*$item->qty }}</td>
+                <td class="text-end">₱{{ $item->price*$item->qty }}</td>
             </tr>
             @endforeach
 
@@ -130,9 +130,9 @@
                 </div> <!-- end col -->
                 <div class="col-sm-6">
                     <div class="float-end">
-    <p><b>Sub-total:</b> <span class="float-end">${{ Cart::subtotal() }}</span></p>
-    <p><b>Vat (21%):</b> <span class="float-end"> &nbsp;&nbsp;&nbsp; ${{ Cart::tax() }}</span></p>
-    <h3>${{ Cart::total() }} USD</h3>
+    <p><b>Sub-total:</b> <span class="float-end">₱{{ Cart::subtotal() }}</span></p>
+    <p><b>Vat (21%):</b> <span class="float-end"> &nbsp;&nbsp;&nbsp; ₱{{ Cart::tax() }}</span></p>
+    <h3>₱{{ Cart::total() }} </h3>
                     </div>
                     <div class="clearfix"></div>
                 </div> <!-- end col -->

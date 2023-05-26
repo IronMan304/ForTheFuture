@@ -78,7 +78,7 @@
                 <div class="col-6">
                       <div class="text-end">
                         <h3 class="text-dark mt-1">$<span data-plugin="counterup">{{ $total_due  }}</span></h3>
-                        <p class="text-muted mb-1 text-truncate">Total Due </p>
+                        <p class="text-muted mb-1 text-truncate">Total Change </p>
                     </div>
                 </div>
             </div> <!-- end row-->
@@ -128,29 +128,7 @@
 </div>
                         <!-- end row-->
 
-                        <div class="row">
-                            
-
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body pb-2">
-                                        <div class="float-end d-none d-md-inline-block">
-                                            <div class="btn-group mb-2">
-                                                <button type="button" class="btn btn-xs btn-light">Today</button>
-                                                <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                                <button type="button" class="btn btn-xs btn-secondary">Monthly</button>
-                                            </div>
-                                        </div>
-    
-                                        <h4 class="header-title mb-3">Sales Analytics</h4>
-    
-                                        <div dir="ltr">
-                                            <div id="sales-analytics" class="mt-4" data-colors="#1abc9c,#4a81d4"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col-->
-                        </div>
+                        
                         <!-- end row -->
 
                         <div class="row">
