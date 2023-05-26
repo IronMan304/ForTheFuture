@@ -4,13 +4,13 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Petshop Management System </title>
+        <title> Pet Supplies Management System | WOOF! WOOF! K-9 Supplies </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('backend/assets/images/woof!-logo.jpg') }}">
 
         <!-- Plugins css -->
         <link href="{{ asset('backend/assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
@@ -24,6 +24,9 @@
         <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Head js -->
         <script src="{{ asset('backend/assets/js/head.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
+
 
 
   <!-- dataTables -->
@@ -144,7 +147,7 @@
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
- @if(Session::has('message'))
+ if("{{Session::has('message') }}"){  
  var type = "{{ Session::get('alert-type','info') }}"
  switch(type){
     case 'info':
@@ -163,7 +166,7 @@
     toastr.error(" {{ Session::get('message') }} ");
     break; 
  }
- @endif 
+}
 </script>
 
 

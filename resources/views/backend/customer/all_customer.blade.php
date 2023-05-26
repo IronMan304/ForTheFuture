@@ -35,7 +35,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>ShopName</th>
+                                
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -49,7 +49,7 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->phone }}</td>
-                <td>{{ $item->shopname }}</td>
+               
                 <td>
 <a href="{{ route('edit.customer',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href="{{ route('delete.customer',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>

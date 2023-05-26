@@ -92,23 +92,6 @@
 
 
 
-      <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Experience    </label>
-           <select name="experience" class="form-select @error('experience') is-invalid @enderror" id="example-select">
-                    <option selected disabled >Select Year </option>
-                    <option value="1 Year">1 Year</option>
-                    <option value="2 Year">2 Year</option>
-                    <option value="3 Year">3 Year</option>
-                    <option value="4 Year">4 Year</option>
-                    <option value="5 Year">5 Year</option>
-                </select>
-                 @error('experience')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-         
-        </div>
-    </div>
 
 
  <div class="col-md-6">
@@ -121,29 +104,7 @@
         </div>
     </div>
 
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Vacation    </label>
-            <input type="text" name="vacation" class="form-control @error('vacation') is-invalid @enderror"   >
-             @error('vacation')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee City    </label>
-            <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"   >
-             @error('city')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-
-
+     
 
    <div class="col-md-12">
 <div class="mb-3">

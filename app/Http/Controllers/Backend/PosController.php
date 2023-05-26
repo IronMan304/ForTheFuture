@@ -19,26 +19,35 @@ class PosController extends Controller
     } // End Method 
 
 
-    public function AddCart(Request $request){
-
+    public function AddCart(Request $request)
+    {
+        $product = Product::find($request->id);
+    
+        if ($product->product_store <= 0) {
+            $notification = array(
+                'message' => 'Product is out of stock.',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
+        }
+    
         Cart::add([
-            'id' => $request->id, 
-            'name' => $request->name, 
-            'qty' => $request->qty, 
-            'price' => $request->price, 
-            'weight' => 20, 
-            'options' => ['size' => 'large']]);
-
-
-         $notification = array(
+            'id' => $product->id,
+            'name' => $product->name,
+            'qty' => $request->qty,
+            'price' => $product->price,
+            'weight' => 20,
+            'options' => ['size' => 'large']
+        ]);
+    
+        $notification = array(
             'message' => 'Product Added Successfully',
             'alert-type' => 'success'
         );
-
+    
         return redirect()->back()->with($notification);
-
-
-    } // End Method 
+    }
+     // End Method 
 
 
     public function AllItem(){

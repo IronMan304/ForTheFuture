@@ -92,15 +92,7 @@
 
 
 
-      <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier Shop Name    </label>
-            <input type="text" name="shopname" class="form-control @error('shopname') is-invalid @enderror"   >
-             @error('shopname')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
+    
 
 
   <div class="col-md-6">
@@ -118,60 +110,6 @@
         </div>
     </div>
     
-
-
- <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Account Holder    </label>
-            <input type="text" name="account_holder" class="form-control @error('account_holder') is-invalid @enderror"   >
-             @error('account_holder')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Account Number    </label>
-            <input type="text" name="account_number" class="form-control @error('account_number') is-invalid @enderror"   >
-             @error('account_number')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-      <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Name    </label>
-            <input type="text" name="bank_name" class="form-control @error('bank_name') is-invalid @enderror"   >
-             @error('bank_name')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-
-      <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Bank Branch    </label>
-            <input type="text" name="bank_branch" class="form-control @error('bank_branch') is-invalid @enderror"   >
-             @error('bank_branch')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Supplier City    </label>
-            <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"   >
-             @error('city')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
 
 
 

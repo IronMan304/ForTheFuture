@@ -56,7 +56,7 @@
                 <td>{{ $item->avail_price }}</td>
                 <td>
 <a href="{{ route('edit.service',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-<a href="{{ route('barcode.service',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light"><i class="fa fa-barcode" aria-hidden="true"></i></a>
+
 <a href="{{ route('delete.service',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
                 </td>

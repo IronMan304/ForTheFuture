@@ -93,13 +93,7 @@
 
 
      
-              <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Garage    </label>
-            <input type="text" name="product_garage" class="form-control "   >
-            
-           </div>
-        </div>
+         
 
 
               <div class="col-md-6">
@@ -210,9 +204,6 @@
                 supplier_id: {
                     required : true,
                 }, 
-                product_garage: {
-                    required : true,
-                }, 
                 product_store: {
                     required : true,
                 }, 
@@ -242,9 +233,6 @@
                 supplier_id: {
                     required : 'Please Select Supplier',
                 }, 
-                product_garage: {
-                    required : 'Please Enter Product Garage',
-                },
                 product_store: {
                     required : 'Please Enter Product Store',
                 },

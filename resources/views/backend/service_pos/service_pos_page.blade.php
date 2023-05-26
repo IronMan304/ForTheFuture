@@ -35,7 +35,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>QTY</th>
+                    <th>Service</th>
                     <th>Price</th>
                     <th>SubTotal</th>
                     <th>Action</th>
@@ -49,15 +49,11 @@
                 @foreach($allcart as $cart)
                 <tr>
                     <td>{{ $cart->name }}</td>
-                    <td>
-       <form method="post" action="{{ url('/cart-update/'.$cart->rowId) }}">
-       @csrf
-
-    <input type="number" name="qty" value="{{ $cart->qty }}" style="width:40px;" min="1">
- <button type="submit" class="btn btn-sm btn-success" style="margin-top:-2px ;"> <i class="fas fa-check"></i> </button>   
-
-   </form> 
-                    </td>
+                    @php
+        $item = $service->firstWhere('id', $cart->id);  
+         @endphp
+                    <td>{{ $item->service_name }}</td>
+                   
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->price*$cart->qty }}</td>
      <td> <a href="{{ url('/cart-remove/'.$cart->rowId) }}"><i class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
@@ -70,7 +66,9 @@
 
     <div class="bg-primary">
         <br>
-        <p style="font-size:18px; color:#fff"> Quantity : {{ Cart::count() }} </p>
+        
+        
+        <p style="font-size:18px; color:#fff"> Service : {{ $item->service_name }}</p>
         <p style="font-size:18px; color:#fff"> SubTotal : {{ Cart::subtotal() }} </p>
         <p style="font-size:18px; color:#fff"> Vat : {{ Cart::tax() }} </p>
         <p><h2 class="text-white"> Total </h2> <h1 class="text-white"> {{ Cart::total() }}</h1>   </p>
@@ -80,6 +78,8 @@
  <br>
     <form id="myForm" method="post" action="{{ url('/create-service-invoice') }}">
         @csrf
+
+       
      
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">All Customer </label>
@@ -130,7 +130,8 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Image</th>
-                                <th>Name</th> 
+                                <th>Category</th> 
+                                <th>Service</th> 
                                  <th> </th> 
                             </tr>
                         </thead>
@@ -140,21 +141,22 @@
             @foreach($service as $key=> $item)
             <tr>
 
-    <form method="post" action="{{ url('/add-cart') }}">
-        @csrf
+            <form method="post" action="{{ url('/add-cart') }}">
+    @csrf
 
-        <input type="hidden" name="id" value="{{ $item->id }}">
-        <input type="hidden" name="name" value="{{ $item->service_name }}">
-        <input type="hidden" name="qty" value="1">
-        <input type="hidden" name="price" value="{{ $item->avail_price }}">
+    <input type="hidden" name="id" value="{{ $item->id }}">
+    <input type="hidden" name="name" value="{{ $item->service_name }}">
+    <input type="hidden" name="qty" value="1">
+    <input type="hidden" name="price" value="{{ $item->avail_price }}">
 
-                <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->service_image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item->service_name }}</td>
-                <td><button type="submit" style="font-size: 20px; color: #000;" > <i class="fas fa-plus-square"></i> </button> </td> 
-           
+    <td>{{ $key+1 }}</td>
+    <td> <img src="{{ asset($item->service_image) }}" style="width:50px; height: 40px;"> </td>
+    <td>{{ $item->service_category_name }}</td>
+    <td>{{ $item->service_name }}</td>
+    <td><button type="submit" style="font-size: 20px; color: #000;" > <i class="fas fa-plus-square"></i> </button> </td> 
 
-  </form>
+</form>
+
             </tr>
             @endforeach
         </tbody>

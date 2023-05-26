@@ -192,7 +192,8 @@
 
                         <div class="mb-3">
              <label for="username" class="form-label">Pay Now</label>
-     <input class="form-control" type="text" name="pay" placeholder="Pay Now">
+             <input class="form-control" type="number" id="paymentInput" name="pay" placeholder="Pay Now" onchange="validatePayment()">
+
                     </div>
 
  
@@ -207,8 +208,8 @@
 
  
 
-                    <div class="mb-3 text-center">
-     <button class="btn btn-primary" type="submit">Complete Order </button>
+   <div class="mb-3 text-center">
+     <button id="completeOrderBtn" class="btn btn-primary" type="submit">Complete Order </button>
                     </div>
 
                 </form>
@@ -217,6 +218,24 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script>
+function validatePayment() {
+    var total = parseFloat("{{ Cart::total() }}"); // Retrieve the total value from the server-side code
+    var paymentStatus = document.getElementById("example-select").value;
+    var paymentInput = document.getElementById("paymentInput");
+    var completeOrderBtn = document.getElementById("completeOrderBtn");
+
+    if (paymentStatus !== "" && (paymentInput.value !== "" && parseFloat(paymentInput.value) >= total)) {
+        completeOrderBtn.removeAttribute("disabled"); // Enable the button
+    } else {
+        completeOrderBtn.setAttribute("disabled", "disabled"); // Disable the button
+    }
+}
+
+// Call the validation function initially
+validatePayment();
+</script>
          
 
 

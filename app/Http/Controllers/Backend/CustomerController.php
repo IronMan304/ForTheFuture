@@ -29,9 +29,9 @@ class CustomerController extends Controller
             'email' => 'required|unique:customers|max:200',
             'phone' => 'required|max:200',
             'address' => 'required|max:400',
-            'shopname' => 'required|max:200',
-            'account_holder' => 'required|max:200', 
-            'account_number' => 'required', 
+            'shopname' => 'max:200',
+            'account_holder' => 'max:200', 
+            'account_number' => '200', 
             'image' => 'required',  
         ]);
  

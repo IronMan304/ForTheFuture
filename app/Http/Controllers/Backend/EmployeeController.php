@@ -29,8 +29,8 @@ class EmployeeController extends Controller
             'phone' => 'required|max:200',
             'address' => 'required|max:400',
             'salary' => 'required|max:200',
-            'vacation' => 'required|max:200', 
-            'experience' => 'required', 
+            'vacation' => 'max:200', 
+            'experience' => 'max:200', 
             'image' => 'required',  
         ],
         

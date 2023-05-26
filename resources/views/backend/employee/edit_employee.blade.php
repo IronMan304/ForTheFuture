@@ -94,23 +94,7 @@
 
 
 
-      <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Experience    </label>
-           <select name="experience" class="form-select @error('experience') is-invalid @enderror" id="example-select">
-    <option selected disabled >Select Year </option>
-    <option value="1 Year" {{ $employee->experience == '1 Year' ? 'selected' : '' }} >1 Year</option>
-    <option value="2 Year"  {{ $employee->experience == '2 Year' ? 'selected' : '' }}>2 Year</option>
-    <option value="3 Year" {{ $employee->experience == '3 Year' ? 'selected' : '' }}>3 Year</option>
-    <option value="4 Year" {{ $employee->experience == '4 Year' ? 'selected' : '' }}>4 Year</option>
-    <option value="5 Year" {{ $employee->experience == '5 Year' ? 'selected' : '' }}>5 Year</option>
-                </select>
-                 @error('experience')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-         
-        </div>
-    </div>
+      
 
 
  <div class="col-md-6">
@@ -123,26 +107,7 @@
         </div>
     </div>
 
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Vacation    </label>
-            <input type="text" name="vacation" class="form-control @error('vacation') is-invalid @enderror"  value="{{ $employee->vacation }}"   >
-             @error('vacation')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
-
-
-     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="firstname" class="form-label">Employee City    </label>
-            <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"  value="{{ $employee->city }}"   >
-             @error('city')
-      <span class="text-danger"> {{ $message }} </span>
-            @enderror
-        </div>
-    </div>
+  
 
 
 
