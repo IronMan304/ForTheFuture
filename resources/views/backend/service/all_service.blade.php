@@ -13,10 +13,6 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
 
-   <a href="{{ route('import.service') }}" class="btn btn-info rounded-pill waves-effect waves-light">Import </a>  
-   &nbsp;&nbsp;&nbsp;
-   <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Export </a>  
-   &nbsp;&nbsp;&nbsp;
 
       <a href="{{ route('add.service') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Service </a>  
                                         </ol>
@@ -38,7 +34,7 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Name</th>
-                                <th>Service Category</th>
+                               
                                 <th>Code</th>
                                 <th>Price</th>
                                 <th>Action</th>
@@ -51,7 +47,7 @@
             <tr>
                 <td>{{ $key+1 }}</td>
                 <td>{{ $item->service_name }}</td>
-                <td>{{ $item['category']['service_category_name'] }}</td>
+                
                 <td>{{ $item->service_code }}</td>
                 <td>{{ $item->avail_price }}</td>
                 <td>

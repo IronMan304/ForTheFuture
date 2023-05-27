@@ -69,10 +69,10 @@
             @endforeach
             
             
-            <h4 style="color:white; font-size: 30px;" align="center">Final Total: ${{ $finalTotal }}</h4>
-            $endphp
+            <h3 style="color:white; font-size: 30px;" align="center"> Total Sales:₱${{ $finalTotal }}</h3>
+           
 
-            <h4 class="header-title"> Totsl Orders </h4>   
+            <h4 class="header-title" Totsl Orders </h4>   
            
             
         </tbody>

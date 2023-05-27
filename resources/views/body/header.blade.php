@@ -2,8 +2,66 @@
                 <div class="container-fluid">
                     <ul class="list-unstyled topnav-menu float-end mb-0">
 
-                        
+                    @if(Auth::user()->can('roles.menu'))
+                    <li class="dropdown d-none d-xl-block">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                Roles and Permission
+                                <i class="mdi mdi-chevron-down"></i> 
+                            </a>
+                            <div class="dropdown-menu">
+                                <!-- item-->
+                                <a href="{{ route('all.permission') }}" class="dropdown-item">
+                                    <i class="fe-briefcase me-1"></i>
+                                    <span>All Permission</span>
+                                </a>
     
+                                <!-- item-->
+                                <a href="{{ route('all.roles') }}" class="dropdown-item">
+                                    <i class="fe-user me-1"></i>
+                                    <span>All Role</span>
+                                </a>
+    
+                                <!-- item-->
+                                <a href="{{ route('add.roles.permission') }}" class="dropdown-item">
+                                    <i class="fe-bar-chart-line- me-1"></i>
+                                    <span>Assign Permission</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+    
+                                <!-- item-->
+                                <a href="{{ route('all.roles.permission') }}" class="dropdown-item">
+                                    <i class="fe-headphones me-1"></i>
+                                    <span>All Roles in Permission</span>
+                                </a>
+    
+                            </div>
+                        </li>
+
+                        <li class="dropdown d-none d-xl-block">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                Users
+                                <i class="mdi mdi-chevron-down"></i> 
+                            </a>
+                            <div class="dropdown-menu">
+                                <!-- item-->
+                                <a href="{{ route('all.admin') }}" class="dropdown-item">
+                                    <i class="fe-briefcase me-1"></i>
+                                    <span>All User</span>
+                                </a>
+    
+                    
+                                </a>
+                                <div class="dropdown-divider"></div>
+    
+                                <!-- item-->
+                                <a href="{{ route('add.admin') }}" class="dropdown-item">
+                                    <i class="fe-headphones me-1"></i>
+                                    <span>Add User</span>
+                                </a>
+    
+                            </div>
+                        </li>
+                        @endif
     
                         <li class="dropdown d-none d-lg-inline-block">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">

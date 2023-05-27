@@ -3,13 +3,13 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Logout  </title>
+        <title> Pet Supplies Management System | Logout Page  </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+         <link rel="shortcut icon" href="{{ asset('backend/assets/images/woof!-logo.ico') }}">
 
         <!-- Bootstrap css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -39,13 +39,13 @@
             <div class="auth-logo">
                 <a href="index.html" class="logo logo-dark text-center">
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="" height="22">
+                        <img src="{{ asset('backend/assets/images/woof!-logo.jpg') }}" alt="" height="50">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light text-center">
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="" height="22">
+                        <img src="{{ asset('backend/assets/images/woof!-logo.jpg') }}" alt="" height="22">
                     </span>
                 </a>
             </div>
@@ -87,7 +87,7 @@
 
 
        <footer class="footer footer-alt">
-            2023 - <script>document.write(new Date().getFullYear())</script> &copy; Easy by <a href="" class="text-white-50">Easylearning</a> 
+            2023 - <script>document.write(new Date().getFullYear())</script> &copy; PSMS by <a href="" class="text-white-50">Inatilleza</a> 
         </footer>
 
         <!-- Vendor js -->

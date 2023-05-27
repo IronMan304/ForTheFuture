@@ -19,6 +19,7 @@
 </a>
 </li>
 
+<li class="menu-title mt-2">Cashier</li>
 
 @if(Auth::user()->can('pos.menu'))
 <li>
@@ -43,7 +44,7 @@
 
 
 
-            <li class="menu-title mt-2">Cashier</li>
+            <li class="menu-title mt-2">Management</li>
 
            
 @if(Auth::user()->can('employee.menu'))
@@ -164,6 +165,9 @@
 </li>
 
 @endif
+
+<li class="menu-title mt-2">Product Menu</li>
+
 @if(Auth::user()->can('category.menu'))
 <li>
 <a href="#category" data-bs-toggle="collapse">
@@ -180,23 +184,8 @@
 </ul>
 </div>
 </li>
-
-<li>
-<a href="#serviceCategory" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
-<span> Service Category </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="serviceCategory">
-<ul class="nav-second-level">
-    <li>
-        <a href="{{ route('all.service_category') }}">All Category </a>
-    </li>
-
-</ul>
-</div>
-</li>
 @endif
+
 @if(Auth::user()->can('product.menu'))
 <li>
 <a href="#product" data-bs-toggle="collapse">
@@ -213,38 +202,12 @@
      <li>
         <a href="{{ route('add.product') }}">Add Product </a>
     </li>
-     <li>
-        <a href="{{ route('import.product') }}">Import Product </a>
-    </li>
-
+ 
 </ul>
 </div>
 </li>
-
-<li>
-<a href="#service" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
-<span> Services  </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="service">
-<ul class="nav-second-level">
-    <li>
-        <a href="{{ route('all.service') }}">All Service </a>
-    </li>
-
-     <li>
-        <a href="{{ route('add.service') }}">Add Service </a>
-    </li>
-     <li>
-        <a href="{{ route('import.service') }}">Import Service </a>
-    </li>
-
-</ul>
-</div>
-</li>
-
 @endif
+
 @if(Auth::user()->can('orders.menu'))
 <li>
 <a href="#orders" data-bs-toggle="collapse">
@@ -267,6 +230,71 @@
 </ul>
 </div>
 </li>
+@endif
+
+@if(Auth::user()->can('stock.menu'))
+
+<li>
+<a href="#stock" data-bs-toggle="collapse">
+<i class="mdi mdi-email-multiple-outline"></i>
+<span> Inventory   </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="stock">
+<ul class="nav-second-level">
+<li>
+<a href="{{ route('stock.manage') }}">Stock </a>
+</li>
+
+
+</ul>
+</div>
+</li>
+@endif
+
+@if(Auth::user()->can('service.menu'))
+<li class="menu-title mt-2">Service Menu</li>
+
+<li>
+<a href="#serviceCategory" data-bs-toggle="collapse">
+<i class="mdi mdi-email-multiple-outline"></i>
+<span> Service Category </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="serviceCategory">
+<ul class="nav-second-level">
+    <li>
+        <a href="{{ route('all.service_category') }}">All Category </a>
+    </li>
+
+</ul>
+</div>
+</li>
+
+
+
+<li>
+<a href="#service" data-bs-toggle="collapse">
+<i class="mdi mdi-email-multiple-outline"></i>
+<span> Services  </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="service">
+<ul class="nav-second-level">
+    <li>
+        <a href="{{ route('all.service') }}">All Service </a>
+    </li>
+
+     <li>
+        <a href="{{ route('add.service') }}">Add Service </a>
+    </li>
+     
+
+</ul>
+</div>
+</li>
+
+
 
 <li>
 <a href="#service_orders" data-bs-toggle="collapse">
@@ -290,81 +318,13 @@
 </div>
 </li>
 @endif
-@if(Auth::user()->can('stock.menu'))
-<li>
-<a href="#stock" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
-<span> Stock Manage   </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="stock">
-<ul class="nav-second-level">
-<li>
-<a href="{{ route('stock.manage') }}">Stock </a>
-</li>
 
 
-</ul>
-</div>
-</li>
-@endif
-@if(Auth::user()->can('roles.menu'))
-<li>
-<a href="#permission" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
-<span> Roles And Permission    </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="permission">
-<ul class="nav-second-level">
-<li>
-<a href="{{ route('all.permission') }}">All Permission </a>
-</li>
-
-<li>
-<a href="{{ route('all.roles') }}">All Roles </a>
-</li>
-
-<li>
-<a href="{{ route('add.roles.permission') }}">Assign Permission </a>
-</li>
-
-<li>
-<a href="{{ route('all.roles.permission') }}">All Roles in Permission </a>
-</li>
-
-
-</ul>
-</div>
-</li>
-
-
-
-<li>
-<a href="#admin" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
-<span> Setting User    </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="admin">
-<ul class="nav-second-level">
-<li>
-<a href="{{ route('all.admin') }}">All User </a>
-</li>
-
-<li>
-<a href="{{ route('add.admin') }}">Add User </a>
-</li> 
-
-</ul>
-</div>
-</li>
-@endif
 
              
           
 
-            <li class="menu-title mt-2">Custom</li>
+            <li class="menu-title mt-2">Extra</li>
 
 @if(Auth::user()->can('expense.menu'))
         <li>

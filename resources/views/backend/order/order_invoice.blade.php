@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>WOOF! WOOF! K-9 Supplies</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+               WOOF! WOOF! K-9 SUPPLIES DUMAGUETE
+               Email: woof2x2003@yahoo.com <br>
+               Contact: (035) 422 5674 / 0917 107 3352 <br>
+               Caritas Health Shield Building, Real St, Dumaguete, 6200 Negros Oriental <br>
               
             </pre>
         </td>
@@ -75,7 +75,7 @@
            <strong>Customer Phone:</strong> {{ $order->customer->phone }}   <br>
           
            <strong>Address: {{ $order->customer->address }} </strong>  
-            <strong>Shop Name: {{ $order->customer->shopname }} </strong>  
+            
             
          </p>
         </td>
@@ -99,7 +99,7 @@
   <table width="100%">
     <thead style="background-color: green; color:#FFFFFF;">
       <tr class="font">
-         <th>Image </th>
+        
         <th>Product Name</th>
         <th>Product Code</th>
         <th>Quantity</th>
@@ -111,9 +111,7 @@
 
      @foreach($orderItem as $item)
       <tr class="font">
-        <td align="center">
-            <img src="{{ public_path($item->product->product_image) }} " height="50px;" width="50px;" alt="">
-        </td>
+        
         <td align="center"> {{ $item->product->product_name }} </td>
         
         <td align="center"> {{ $item->product->product_code }} </td>
@@ -121,8 +119,8 @@
 
          
         
-        <td align="center">${{ $item->product->selling_price }} </td>
-         <td align="center">$ {{ $item->total }}</td>
+        <td align="center">{{ $item->product->selling_price }} </td>
+         <td align="center"> {{ $item->total }}</td>
       </tr>
       @endforeach
     </tbody>
@@ -131,8 +129,8 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-<h2><span style="color: green;">Subtotal:</span>$ {{ $order->total }} </h2>
-<h2><span style="color: green;">Total:</span> $ {{ $order->total }} </h2>
+        <h2><span style="color: green;">SubTotal:</span>  {{ $order->sub_total }} </h2>
+<h2><span style="color: green;">Total:</span>  {{ $order->total }} </h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>

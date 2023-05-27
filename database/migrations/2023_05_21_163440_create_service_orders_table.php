@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('service_orders', function (Blueprint $table) {
             $table->id();
             $table->integer('customer_id');
-            $table->string('service_order_date')->nullable();
+            $table->string('service_order_date')->nullable();//should not be nullable
             $table->string('service_order_status');
             $table->string('total_services');
             $table->string('service_sub_total')->nullable();

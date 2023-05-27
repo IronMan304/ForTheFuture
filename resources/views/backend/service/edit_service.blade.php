@@ -101,7 +101,7 @@
               <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Service Price    </label>
-            <input type="text" name="service_selling_price" class="form-control "  value="{{ $service->service_selling_price }}"   >
+            <input type="text" name="avail_price" class="form-control "  value="{{ $service->avail_price }}"   >
             
            </div>
         </div>
@@ -109,22 +109,9 @@
 
      
 
-   <div class="col-md-12">
-<div class="form-group mb-3">
-        <label for="example-fileinput" class="form-label">Service Image</label>
-        <input type="file" name="service_image" id="image" class="form-control">
-         
-    </div>
- </div> <!-- end col -->
+   
 
 
-   <div class="col-md-12">
-<div class="mb-3">
-        <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage" src="{{ asset($service->service_image) }}" class="rounded-circle avatar-lg img-thumbnail"
-                alt="profile-image">
-    </div>
- </div> <!-- end col -->
 
 
 

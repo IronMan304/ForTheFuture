@@ -15,7 +15,8 @@
       
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Complete Orders</h4>
+                                    <h4 class="page-title">Complete Service Orders</h4>
+                                    
                                 </div>
                             </div>
                         </div>     
@@ -33,7 +34,7 @@
                                 <th>Sl</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Order Date</th>
+                                
                                 <th>Payment</th>
                                 <th>Invoice</th>
                                 <th>Pay</th>
@@ -52,7 +53,7 @@
                 <td>{{ $key+1 }}</td>
                 <td> <img src="{{ asset($item->customer->image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item['customer']['name'] }}</td>
-                <td>{{ $item->service_order_date }}</td>
+                
                 <td>{{ $item->service_payment_status }}</td>
                 <td>{{ $item->service_invoice_no }}</td>
                 <td>{{ $item->total }}</td>
@@ -69,10 +70,12 @@
             @endforeach
             
             
-            <h4 style="color:white; font-size: 30px;" align="center">Final Total: ${{ $finalTotal }}</h4>
-            $endphp
+            
 
-            <h4 class="header-title"> Total Services </h4>   
+            
+            <h4 style="color:white; font-size: 30px;" align="center"> Revenues: ₱ {{ $finalTotal }}</h4>
+
+          
            
             
         </tbody>

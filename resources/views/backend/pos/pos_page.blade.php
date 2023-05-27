@@ -104,7 +104,7 @@
                     </div>
                 </div>
             </div> <!-- end card -->
-
+            
             <div class="col-lg-6 col-xl-6">
                 <div class="card">
                     <div class="card-body">
@@ -195,4 +195,6 @@
         }
     }
 </script>
+
+
 @endsection

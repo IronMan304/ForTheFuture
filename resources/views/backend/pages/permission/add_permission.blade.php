@@ -72,6 +72,7 @@
         <option value="orders"> Orders</option>
         <option value="stock"> Stock </option>
         <option value="roles"> Roles</option> 
+        <option value="roles"> Service</option> 
                      
                 </select>
            

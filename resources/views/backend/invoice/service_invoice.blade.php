@@ -198,7 +198,7 @@
  
 
    <input type="hidden" name="customer_id" value="{{ $customer->id }}">
-   <input type="hidden" name="service_order_date" value="{{ $item->order_date }}">
+   <input type="hidden" name="service_order_date" value="{{ $item->service_order_date }}">
    <input type="hidden" name="service_order_status" value="pending">
    <input type="hidden" name="total_services" value="{{ Cart::count() }}">
    <input type="hidden" name="service_sub_total" value="{{ Cart::subtotal() }}">
