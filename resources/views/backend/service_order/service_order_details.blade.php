@@ -85,14 +85,14 @@
   <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Order Date </label>
-             <p class="text-danger"> {{ $service_order->order_date }} </p>
+             <p class="text-danger"> {{ $service_order->service_order_date }} </p>
         </div>
     </div>
 
  <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Order Invoice </label>
-             <p class="text-danger"> {{ $service_order->invoice_no }} </p>
+             <p class="text-danger"> {{ $service_order->service_invoice_no }} </p>
         </div>
     </div>
 
@@ -102,14 +102,14 @@
    <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Payment Status </label>
-             <p class="text-danger"> {{ $service_order->payment_status }} </p>
+             <p class="text-danger"> {{ $service_order->service_payment_status }} </p>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Paid Amount </label>
-             <p class="text-danger"> {{ $service_order->pay }} </p>
+             <p class="text-danger"> {{ $service_order->service_pay }} </p>
         </div>
     </div>
  
@@ -117,7 +117,7 @@
  <div class="col-md-6">
         <div class="mb-3">
             <label for="firstname" class="form-label">Due Amount </label>
-             <p class="text-danger"> {{ $service_order->due }} </p>
+             <p class="text-danger"> {{ $service_order->service_due }} </p>
         </div>
     </div>
  
@@ -144,11 +144,11 @@
                     <table class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr> 
-                                <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Product Code</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
+                                
+                                <th>Service Name</th>
+                                <th>Service Code</th>
+                               
+                                
                                 <th>Total(+vat)</th> 
                             </tr>
                         </thead>
@@ -161,7 +161,6 @@
               
                 <td>{{ $item->service->service_name }}</td>
                 <td>{{ $item->service->service_code }}</td>
-                <td>{{ $item->service->service_selling_price }}</td>
                 <td>{{ $item->total }}</td> 
             </tr>
             @endforeach

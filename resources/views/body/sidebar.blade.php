@@ -43,7 +43,7 @@
 
 
 
-            <li class="menu-title mt-2">Apps</li>
+            <li class="menu-title mt-2">Cashier</li>
 
            
 @if(Auth::user()->can('employee.menu'))

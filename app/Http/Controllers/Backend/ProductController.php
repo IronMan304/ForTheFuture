@@ -43,6 +43,13 @@ class ProductController extends Controller
        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
        Image::make($image)->resize(300, 300)->save('upload/product/' . $name_gen);
        $save_url = 'upload/product/' . $name_gen;
+
+       $buying_price = $request->buying_price;
+       $product_store = $request->product_store;
+
+       
+
+
    
        Product::insert([
            'product_name' => $request->product_name,
