@@ -55,7 +55,11 @@
                    
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->price*$cart->qty }}</td>
-     <td> <a href="{{ url('/cart-remove/'.$cart->rowId) }}"><i class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
+                    <td>
+    <a href="{{ url('/cart-remove/'.$cart->rowId) }}" class="remove-button" data-service-id="{{ $cart->id }}">
+        <i class="fas fa-trash-alt" style="color:#ffffff"></i>
+    </a>
+</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -128,7 +132,7 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Image</th>
+                               
                                 <th>Service</th> 
                                  <th> </th> 
                             </tr>
@@ -148,9 +152,17 @@
     <input type="hidden" name="price" value="{{ $item->avail_price }}">
 
     <td>{{ $key+1 }}</td>
-    <td> <img src="{{ asset($item->service_image) }}" style="width:50px; height: 40px;"> </td>
+   
     <td>{{ $item->service_name }}</td>
-    <td><button type="submit" style="font-size: 20px; color: #000;" > <i class="fas fa-plus-square"></i> </button> </td> 
+    <td>
+
+    <td>
+    <button type="submit" style="font-size: 20px; color: #000;" class="add-button" data-service-id="{{ $item->id }}" data-row-id="{{ $item->rowId }}">
+        <i class="fas fa-plus-square"></i> 
+    </button>
+</td>
+</td>
+
 
 </form>
 
@@ -209,6 +221,10 @@
     });
     
 </script>
+
+
+
+
 
 
 

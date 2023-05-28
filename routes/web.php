@@ -39,6 +39,10 @@ Route::get('/dashboard', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/service_dashboard', function () {
+  return view('service_index');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -195,8 +199,7 @@ Route::controller(ServiceController::class)->group(function(){
   Route::get('/barcode/service/{id}','BarcodeService')->name('barcode.service');
   
   Route::get('/import/service','ImportService')->name('import.service');
-  Route::get('/export','Export')->name('export');
-  Route::post('/import','Import')->name('import');
+
   
   
   });
@@ -261,6 +264,9 @@ Route::controller(OrderController::class)->group(function(){
 
  Route::get('/stock','StockManage')->name('stock.manage');
  Route::get('/order/invoice-download/{order_id}','OrderInvoice');
+ Route::get('/order/invoice-download/{order_id}','CompleteOrderInvoice')->name('pdf');
+ Route::get('/export','Export')->name('export');
+Route::post('/import','Import')->name('import');
 
  //// Due All Route 
 

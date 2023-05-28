@@ -32,10 +32,13 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-           $notification = array(
-            'message' => 'Admin Login Successfully',
+        $adminName = Auth::user()->name; // Retrieve the name of the authenticated admin
+
+        $notification = [
+            'message' => $adminName . ' Login Successfully', // Display the admin name in the message
             'alert-type' => 'info'
-        );
+        ];
+           
 
    return redirect()->intended(RouteServiceProvider::HOME)->with($notification);
     }

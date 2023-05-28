@@ -12,7 +12,9 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      
+                                       
+   <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Export </a>  
+   &nbsp;&nbsp;&nbsp;
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Complete Orders</h4>

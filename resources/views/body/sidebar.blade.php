@@ -15,7 +15,14 @@
 <li>
 <a href="{{ url('/dashboard') }}">
 <i class="mdi mdi-view-dashboard-outline"></i>
-<span> Dashboards </span>
+<span> Product Dashboard </span>
+</a>
+</li>
+
+<li>
+<a href="{{ url('/service_dashboard') }}">
+<i class="mdi mdi-view-dashboard-outline"></i>
+<span> Service Dashboard </span>
 </a>
 </li>
 

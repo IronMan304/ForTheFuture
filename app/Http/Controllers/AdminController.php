@@ -14,28 +14,26 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-     public function AdminDestroy(Request $request) {
+    public function adminDestroy(Request $request)
+    {
+        $adminName = Auth::user()->name; // Retrieve the name of the authenticated admin
+
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
-         $notification = array(
-            'message' => 'Admin Logout Successfully',
+        $notification = [
+            'message' => $adminName . ' Logout Successfully', // Display the admin name in the message
             'alert-type' => 'info'
-        );
-
+        ];
 
         return redirect('/logout')->with($notification);
-    } // End Method 
+    }
 
-
-    public function AdminLogoutPage(){
-
+    public function adminLogoutPage()
+    {
         return view('admin.admin_logout');
-
-    }// End Method 
+    }
 
 
 
@@ -65,10 +63,13 @@ class AdminController extends Controller
             
         $data->save();
 
-        $notification = array(
-            'message' => 'Admin Profile Updated Successfully',
-            'alert-type' => 'success'
-        );
+        
+        $adminName = Auth::user()->name; // Retrieve the name of the authenticated admin
+
+        $notification = [
+            'message' => $adminName . ' Profile Updated Successfully', // Display the admin name in the message
+            'alert-type' => 'info'
+        ];
 
         return redirect()->back()->with($notification);
 
@@ -95,7 +96,7 @@ class AdminController extends Controller
         if (!Hash::check($request->old_password, auth::user()->password)) {
 
              $notification = array(
-            'message' => 'Old Password Dones not Match!!',
+            'message' => 'Old Password Do not Match!!',
             'alert-type' => 'error'
              ); 
             return back()->with($notification);
@@ -146,7 +147,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'New Admin User Created Successfully',
+            'message' => 'New User Created Successfully',
             'alert-type' => 'success'
         );
 
@@ -180,7 +181,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'Admin User Updated Successfully',
+            'message' => 'User Updated Successfully',
             'alert-type' => 'success'
         );
 
@@ -198,7 +199,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => 'Admin User Deleted Successfully',
+            'message' => 'User Deleted Successfully',
             'alert-type' => 'success'
         );
 

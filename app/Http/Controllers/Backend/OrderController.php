@@ -12,7 +12,8 @@ use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use App\Exports\OrderExport;
+use Maatwebsite\Excel\Facades\Excel;
 class OrderController extends Controller
 {
 
@@ -143,6 +144,21 @@ class OrderController extends Controller
 
     }// End Method 
 
+    public function CompleteOrderInvoice($order_id){
+
+        $order = Order::where('id',$order_id)->first();
+
+       $orderItem = Orderdetails::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
+
+       $pdf = Pdf::loadView('backend.order.order_invoice', compact('order','orderItem'))->setPaper('a4')->setOption([
+               'tempDir' => public_path(),
+               'chroot' => public_path(),
+
+       ]);
+        return $pdf->download('invoice.pdf');
+
+   }// End Method 
+
 
     public function PendingDue(){
 
@@ -184,6 +200,11 @@ class OrderController extends Controller
 
         return redirect()->route('pending.due')->with($notification);
 
+
+    }// End Method 
+    public function Export(){
+
+        return Excel::download(new OrderExport,'orders.xlsx');
 
     }// End Method 
 
