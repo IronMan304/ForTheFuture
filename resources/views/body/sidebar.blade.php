@@ -9,22 +9,35 @@
     <div id="sidebar-menu">
 
         <ul id="side-menu">
-
-            <li class="menu-title">Navigation</li>
-
-<li>
-<a href="{{ url('/dashboard') }}">
-<i class="mdi mdi-view-dashboard-outline"></i>
-<span> Product Dashboard </span>
-</a>
-</li>
+        <li class="menu-title">Navigation</li>
 
 <li>
-<a href="{{ url('/service_dashboard') }}">
-<i class="mdi mdi-view-dashboard-outline"></i>
-<span> Service Dashboard </span>
-</a>
+    <a href="#sidebarDashboards" data-bs-toggle="collapse">
+        <i class="mdi mdi-view-dashboard-outline"></i>
+        <span class="badge bg-success rounded-pill float-end">4</span>
+        <span> Dashboards </span>
+    </a>
+    <div class="collapse" id="sidebarDashboards">
+        <ul class="nav-second-level">
+            <li>
+                <a href="{{ url('/overall_dashboard') }}">Overall Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ url('/product_dashboard') }}">Product Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ url('/service_dashboard') }}">Service Dashboard</a>
+            </li>
+           
+        </ul>
+    </div>
 </li>
+
+            
+
+
+
+
 
 <li class="menu-title mt-2">Cashier</li>
 

@@ -48,14 +48,14 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>WOOF! WOOF 1 K-9 Supplies</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
-               EasyShop Head Office
-               Email:support@easylearningbd.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
+              WOOF! WOOF! K-9 SUPPLIES DUMAGUETE
+               Email: woof2x2003@yahoo.com <br>
+               Contact: (035) 422 5674 / 0917 107 3352 <br>
+               Caritas Health Shield Building, Real St, Dumaguete, 6200 Negros Oriental <br>
               
             </pre>
         </td>
@@ -75,18 +75,18 @@
            <strong>Customer Phone:</strong> {{ $order->customer->phone }}   <br>
           
            <strong>Address: {{ $order->customer->address }} </strong>  
-            <strong>Shop Name: {{ $order->customer->shopname }} </strong>  
+        
             
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> # {{ $order->invoice_no }}  </h3>
-            Order Date:  {{ $order->order_date }} <br>
-            Order Status:  {{ $order->order_status }} <br>
-            Payment Status: {{ $order->payment_status }}  <br>
-            Total Pay :  {{ $order->pay }} <br>
-            Total Due :  {{ $order->due }} </span>
+            <h3><span style="color: green;">Invoice:</span> # {{ $order->service_invoice_no }}  </h3>
+            Order Date:  {{ $order->service_order_date }} <br>
+            Order Status:  {{ $order->service_order_status }} <br>
+            Payment Status: {{ $order->service_payment_status }}  <br>
+            Total Pay :  {{ $order->service_pay }} <br>
+            Total Due :  {{ $order->service_due }} </span>
 
          </p>
         </td>
@@ -99,10 +99,10 @@
   <table width="100%">
     <thead style="background-color: green; color:#FFFFFF;">
       <tr class="font">
-         <th>Image </th>
+        
         <th>Product Name</th>
         <th>Product Code</th>
-        <th>Quantity</th>
+       
         <th>Price</th>
         <th>Total(+Vat)</th>
       </tr>
@@ -119,7 +119,7 @@
 
          
         
-        <td align="center">${{ $item->service->service_selling_price }} </td>
+        <td align="center">${{ $item->service->avail_price }} </td>
          <td align="center">$ {{ $item->total }}</td>
       </tr>
       @endforeach
@@ -129,14 +129,14 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-<h2><span style="color: green;">Subtotal:</span>$ {{ $order->total }} </h2>
+<h2><span style="color: green;">Subtotal:</span>$ {{ $order->service_sub_total }} </h2>
 <h2><span style="color: green;">Total:</span> $ {{ $order->total }} </h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>
   <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
+    <p>Thanks For Availing Service..!!</p>
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>

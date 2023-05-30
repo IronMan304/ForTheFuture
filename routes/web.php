@@ -35,12 +35,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/product_dashboard', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/service_dashboard', function () {
   return view('service_index');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/overall_dashboard', function () {
+  return view('overall_index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
