@@ -37,7 +37,7 @@ class OrderController extends Controller
         $data['sub_total'] = $request->sub_total;
         $data['vat'] = $request->vat;
 
-        $data['invoice_no'] = 'EPOS'.mt_rand(10000000,99999999);
+        $data['invoice_no'] = 'PIN'.mt_rand(100000,999999);
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
@@ -144,6 +144,8 @@ class OrderController extends Controller
 
     }// End Method 
 
+    
+
     public function CompleteOrderInvoice($order_id){
 
         $order = Order::where('id',$order_id)->first();
@@ -207,6 +209,15 @@ class OrderController extends Controller
         return Excel::download(new OrderExport,'orders.xlsx');
 
     }// End Method 
+
+    public function generateCompleteOrderPDF()
+    {
+        $orders = Order::where('order_status', 'complete')->get();
+        
+        $pdf = PDF::loadView('backend.order.complete_order_pdf', compact('orders'));
+        
+        return $pdf->download('completed_orders.pdf');
+    }
 
 
 }

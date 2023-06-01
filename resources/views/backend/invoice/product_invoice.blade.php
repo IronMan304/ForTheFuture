@@ -60,7 +60,7 @@
                 </div><!-- end col -->
                 <div class="col-md-4 offset-md-2">
                     <div class="mt-3 float-end">
-                        <p><strong>Order Date : </strong> <span class="float-end"> &nbsp;&nbsp;&nbsp;&nbsp; Jan 09, 2023</span></p>
+                        <p><strong>Order Date : </strong> <span class="float-end"> &nbsp;&nbsp;&nbsp;&nbsp; {{ date('d-F-Y') }}</span></p>
                         <p><strong>Order Status : </strong> <span class="float-end"><span class="badge bg-danger">Unpaid</span></span></p>
                         <p><strong>Invoice No. : </strong> <span class="float-end">000028 </span></p>
                     </div>

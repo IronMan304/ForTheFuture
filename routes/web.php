@@ -32,18 +32,18 @@ use App\Http\Controllers\Backend\ServiceCategoryController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/product_dashboard', function () {
     return view('index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('product_dashboard');
 
 Route::get('/service_dashboard', function () {
   return view('service_index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('service_dashboard');
 
-Route::get('/overall_dashboard', function () {
+Route::get('/dashboard', function () {
   return view('overall_index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -280,6 +280,12 @@ Route::post('/import','Import')->name('import');
 });
 
 
+
+
+
+
+
+
 ///ServiceOrder All Route 
 Route::controller(ServiceOrderController::class)->group(function(){
 
@@ -294,6 +300,7 @@ Route::controller(ServiceOrderController::class)->group(function(){
   Route::get('service/order/invoice-download/{service_id}','ServiceOrderInvoice');
  
   //// Due All Route 
+ ////Route::get('service/order/complete/pdf','generateCompleteServiceOrderPDF')->name('complete.service.order.pdf');
  
 
  });
@@ -367,6 +374,8 @@ Route::controller(AdminController::class)->group(function(){
 
  
 
+Route::get('complete/order/pdf', [OrderController::class, 'generateCompleteOrderPDF'])->name('complete.order.pdf');
+Route::get('service/complete/order/pdf', [ServiceOrderController::class, 'generateServiceCompleteOrderPDF'])->name('service.complete.order.pdf');
 
 
 

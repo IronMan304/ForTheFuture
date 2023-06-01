@@ -31,7 +31,7 @@ class ServiceOrderController extends Controller
         $data['service_sub_total'] = $request->service_sub_total;
         $data['service_vat'] = $request->service_vat;
 
-        $data['service_invoice_no'] = 'SIN'.mt_rand(10000000,99999999);
+        $data['service_invoice_no'] = 'SIN'.mt_rand(100000,999999);
         $data['total'] = $request->total;
         $data['service_payment_status'] = $request->payment_status;
         $data['service_pay'] = $request->pay;
@@ -159,6 +159,15 @@ class ServiceOrderController extends Controller
 
 
     }// End Method 
+
+    public function generateServiceCompleteOrderPDF()
+    {
+        $service_orders = ServiceOrder::where('service_order_status', 'complete')->get();
+        
+        $pdf = PDF::loadView('backend.service_order.complete_service_order_pdf', compact('service_orders'));
+        
+        return $pdf->download('service_completed_orders.pdf');
+    }// End Method
 
 
 }

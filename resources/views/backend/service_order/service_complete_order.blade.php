@@ -26,7 +26,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                     
+                <div class="mb-3">
+                                <a href="{{ route('service.complete.order.pdf') }}" class="btn btn-primary">Generate PDF</a>
+                            </div>
                 
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>

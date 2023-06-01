@@ -14,13 +14,14 @@
 <li>
     <a href="#sidebarDashboards" data-bs-toggle="collapse">
         <i class="mdi mdi-view-dashboard-outline"></i>
-        <span class="badge bg-success rounded-pill float-end">4</span>
+        <span class="badge bg-success rounded-pill float-end"></span>
         <span> Dashboards </span>
+        <span class="menu-arrow"></span>
     </a>
     <div class="collapse" id="sidebarDashboards">
         <ul class="nav-second-level">
             <li>
-                <a href="{{ url('/overall_dashboard') }}">Overall Dashboard</a>
+                <a href="{{ url('/dashboard') }}">Overall Dashboard</a>
             </li>
             <li>
                 <a href="{{ url('/product_dashboard') }}">Product Dashboard</a>

@@ -61,8 +61,16 @@
                 </div><!-- end col -->
                 <div class="col-md-4 offset-md-2">
                     <div class="mt-3 float-end">
-                        <p><strong>Order Date : </strong> <span class="float-end"> &nbsp;&nbsp;&nbsp;&nbsp; May 23, 2023
- </span></p>
+               <!-- Your other form fields -->
+@php
+    $serviceOrderDate = date('Y-m-d'); // Replace with the desired date in the format 'Y-m-d'
+@endphp
+<div class="form-group">
+    <label for="service_order_date">Order Date:</label>
+    <input type="date" name="service_order_date" class="form-control" value="{{ $serviceOrderDate }}" readonly required>
+</div>
+<!-- Your other form fields -->
+    
 
                         <p><strong>Order Status : </strong> <span class="float-end"><span class="badge bg-danger">Unpaid</span></span></p>
                         <p><strong>Invoice No. : </strong> <span class="float-end">000028 </span></p>
@@ -94,14 +102,16 @@
             <thead>
             <tr><th>#</th>
                 <th>Service</th>
+                
                 <th style="width: 10%">Service Cost</th>
+                <th>Avail Date</th>
                 <th style="width: 10%" class="text-end">Total</th>
             </tr></thead>
             <tbody>
             @php
             $sl = 1;
             @endphp
-
+            <input type="hidden" name="service_order_date" value="{{ date('d-F-Y') }}">
             @foreach($contents as $key=> $item)
             <tr>
                 <td>{{ $sl++ }}</td>
@@ -110,6 +120,7 @@
                     
                 </td>
                 <td>{{ $item->price }}</td>
+                <td>{{ date('d-F-Y') }}</td>
                 <td class="text-end">₱{{ $item->price*$item->qty }}</td>
             </tr>
             @endforeach
@@ -198,7 +209,7 @@
  
 
    <input type="hidden" name="customer_id" value="{{ $customer->id }}">
-   <input type="hidden" name="service_order_date" value="{{ $item->service_order_date }}">
+   <input type="hidden" name="service_order_date" value="{{ date('d-F-Y') }}">
    <input type="hidden" name="service_order_status" value="pending">
    <input type="hidden" name="total_services" value="{{ Cart::count() }}">
    <input type="hidden" name="service_sub_total" value="{{ Cart::subtotal() }}">
