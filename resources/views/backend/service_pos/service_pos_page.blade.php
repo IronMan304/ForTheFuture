@@ -1,6 +1,8 @@
 @extends('admin_dashboard')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
  <div class="content">
 
@@ -85,17 +87,45 @@
        
      
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">All Customer </label>
+           
 
               <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light mb-2">Add Customer </a>  
+                <hr>
+              <label for="firstname" class="form-label">All Customer </label>
+              <table id="customer-table" class="table table-bordered table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer ID</th>
+                                            <th>Customer Name</th>
+                                            <th>Select</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($customer as $cus)
+                                        <tr>
+                                            <td>{{ $cus->id }}</td>
+                                            <td>{{ $cus->name }}</td>
+                                            <td>
+                                                <input type="radio" name="customer_id" value="{{ $cus->id }}">
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                </table>
 
+                               
 
-            <select name="customer_id" class="form-select" id="example-select">
-                    <option selected disabled >Select Customer </option>
-                    @foreach($customer as $cus)
-        <option value="{{ $cus->id }}">{{ $cus->name }}</option>
-                     @endforeach
-                </select>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#customer-table').DataTable({
+                                                "paging": true,
+                                                "lengthMenu": [5, 10, 25, 50],
+                                                "pageLength": 5
+                                            });
+                                        });
+                                </script>
+                                
+           
            
         </div>
     
@@ -125,56 +155,69 @@
 
     <!-- end timeline content-->
 
-    <div class="tab-pane" id="settings">
-
-
-           <table id="basic-datatable" class="table dt-responsive nowrap w-100">
-                        <thead>
-                            <tr>
-                                <th>Sl</th>
-                               
-                                <th>Service</th> 
-                                 <th> </th> 
-                            </tr>
-                        </thead>
-                    
-    
-        <tbody>
-            @foreach($service as $key=> $item)
-            <tr>
-
-            <form method="post" action="{{ url('/add-cart') }}">
-    @csrf
-
-    <input type="hidden" name="id" value="{{ $item->id }}">
-    <input type="hidden" name="name" value="{{ $item->service_name }}">
-    <input type="hidden" name="qty" value="1">
-    <input type="hidden" name="price" value="{{ $item->avail_price }}">
-
-    <td>{{ $key+1 }}</td>
-   
-    <td>{{ $item->service_name }}</td>
-    <td>
-
-    <td>
-    <button type="submit" style="font-size: 20px; color: #000;" class="add-button" data-service-id="{{ $item->id }}" data-row-id="{{ $item->rowId }}">
-        <i class="fas fa-plus-square"></i> 
-    </button>
-</td>
-</td>
-
-
-</form>
-
-            </tr>
-            @endforeach
-        </tbody>
-                    </table>
 
 
     
-    </div>
-    <!-- end settings content-->
+    
+
+<table id="service-table" class="table dt-responsive nowrap w-100 table-dark">
+  <thead>
+    <tr>
+      <th>Sl</th>
+      <th>Service</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($service as $key => $item)
+    <tr>
+      <form method="post" action="{{ url('/add-cart') }}">
+        @csrf
+        <input type="hidden" name="id" value="{{ $item->id }}">
+        <input type="hidden" name="name" value="{{ $item->service_name }}">
+        <input type="hidden" name="qty" value="1">
+        <input type="hidden" name="price" value="{{ $item->avail_price }}">
+        <td>{{ $key+1 }}</td>
+        <td>{{ $item->service_name }}</td>
+        <td>
+          <button type="submit" style="font-size: 20px; color: #000;" class="add-button" data-service-id="{{ $item->id }}" data-row-id="{{ $item->rowId }}" {{ Cart::count() > 0 ? 'disabled' : '' }}>
+            <i class="fas fa-plus-square"></i> 
+          </button>
+        </td>
+      </form>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+<script>
+  $(document).ready(function() {
+    var dataTable = $('#service-table').DataTable({
+      paging: true,
+      lengthChange: false,
+      searching: true,
+      info: false,
+      pageLength: 10,
+      columnDefs: [{
+        targets: [0, 2],
+        orderable: false
+      }]
+    });
+    
+    $('#searchInput').on('keyup', function() {
+      dataTable.search(this.value).draw();
+    });
+  });
+</script>
+
+
+             
+    
+    
+    
     
                                        
                                     </div>

@@ -37,7 +37,7 @@
             <th>Invoice</th>
             <th>Pay</th>
             <th>Status</th>
-            <th>Action</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -62,9 +62,7 @@
             @php
             $finalTotal += $item->total;
             @endphp
-            <td>
-                <a href="{{ url('order/invoice-download/'.$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> PDF Invoice </a> 
-            </td>
+            
         </tr>
         @endforeach
 
@@ -85,9 +83,7 @@
             @php
             $finalTotal += $serviceOrder->total;
             @endphp
-            <td>
-                <a href="{{ url('service-order/invoice-download/'.$serviceOrder->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> PDF Invoice </a> 
-            </td>
+           
         </tr>
         @endforeach
     </tbody>

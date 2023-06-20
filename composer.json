@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.0.0 || 8.0.2",
         "barryvdh/laravel-dompdf": "^2.0",
         "bumbummen99/shoppingcart": "^4.2",
         "guzzlehttp/guzzle": "^7.2",
@@ -14,7 +14,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "maatwebsite/excel": "^3.1",
+      
         "picqer/php-barcode-generator": "^2.2",
         "psr/simple-cache": "2.0",
         "spatie/laravel-backup": "^8.1",
@@ -71,5 +71,6 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "platform-check": false
 }

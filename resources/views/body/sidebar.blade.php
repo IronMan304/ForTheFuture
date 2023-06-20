@@ -345,9 +345,9 @@
              
           
 
-            <li class="menu-title mt-2">Extra</li>
+            <li class="menu-title mt-2"></li>
 
-@if(Auth::user()->can('expense.menu'))
+@if(Auth::user()->can('expenses.menu'))
         <li>
             <a href="#sidebarAuth" data-bs-toggle="collapse">
                 <i class="mdi mdi-account-circle-outline"></i>

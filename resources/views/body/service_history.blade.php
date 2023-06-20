@@ -82,8 +82,8 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <div class="avatar-lg rounded-circle bg-success border-success border shadow">
-                        <i class="fe-shopping-cart font-22 avatar-title text-white"></i>
+                    <div class="avatar-lg rounded-circle bg-success border-success border shadow d-flex justify-content-center align-items-center">
+              <i class="fas fa-regular fa-money-bill fa-spin font-22 text-white"></i>
                     </div>
                 </div>
                 <div class="col-6">
@@ -104,8 +104,8 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <div class="avatar-lg rounded-circle bg-info border-info border shadow">
-                        <i class="fe-bar-chart-line- font-22 avatar-title text-white"></i>
+                    <div class="avatar-lg rounded-circle bg-info border-info border shadow d-flex justify-content-center align-items-center">
+                    <i class="fas fa-duotone fa-box fa-bounce font-22  text-white "></i>
                     </div>
                 </div>
                 <div class="col-6">
@@ -124,8 +124,8 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <div class="avatar-lg rounded-circle bg-warning border-warning border shadow">
-                        <i class="fe-eye font-22 avatar-title text-white"></i>
+                    <div class="avatar-lg rounded-circle bg-warning border-warning border shadow d-flex justify-content-center align-items-center">
+                        <i class="fe-eye fa-beat font-22 avatar-title text-white"></i>
                     </div>
                 </div>
                 <div class="col-6">
