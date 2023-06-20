@@ -95,13 +95,7 @@
 
 
      
-              <div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Product Garage    </label>
-            <input type="text" name="product_garage" class="form-control "   value="{{ $product->product_garage }}"  >
-            
-           </div>
-        </div>
+              
 
 
               <div class="col-md-6">

@@ -32,7 +32,7 @@
                                     <div class="page-title-right">
                                        
                                     </div>
-                                    <h4 class="page-title">Dashboard</h4>
+                                    <h4 class="page-title">Product Dashboard</h4>
                                 </div>
                             </div>
                         </div>     

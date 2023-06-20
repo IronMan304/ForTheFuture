@@ -15,7 +15,7 @@
       
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Pending Orders</h4>
+                                    <h4 class="page-title">Pending Services</h4>
                                 </div>
                             </div>
                         </div>     

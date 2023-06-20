@@ -24,7 +24,7 @@
         <!-- end page title -->
        
         <div class="row">
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-5 col-xl-5">
                 <div class="card text-center">
                     <div class="card-body">
                         <!-- ... -->
@@ -97,8 +97,10 @@
                         <form id="myForm" method="post" action="{{ url('/create-invoice') }}">
                             @csrf
                             <div class="form-group mb-3">
-                                <label for="firstname" class="form-label">All Customer</label>
+                                
                                 <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light mb-2">Add Customer</a>
+                                <hr>
+                                <label for="firstname" class="form-label">All Customer</label>
                                 <table id="customer-table" class="table table-bordered table-dark">
                                     <thead>
                                         <tr>
@@ -153,7 +155,7 @@
                 </div>
             </div> <!-- end card -->
            
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-lg-7 col-xl-7">
                 <div class="card">
                     <div class="card-body">
                         <div class="tab-pane" id="settings">
@@ -161,7 +163,7 @@
 <table id="product-table" class="table dt-responsive nowrap w-100">
   <thead>
     <tr>
-      <th>Sl</th>
+     
     
       <th>Category</th>
       <th>Product</th>
@@ -178,7 +180,7 @@
         <input type="hidden" name="name" value="{{ $item->product_name }}">
         <input type="hidden" name="qty" value="1">
         <input type="hidden" name="price" value="{{ $item->selling_price }}">
-        <td>{{ $key+1 }}</td>
+       
        
         <td>{{ $item->category->category_name }}</td>
         <td>{{ $item->product_name }}</td>
@@ -285,8 +287,8 @@
                                     $(document).ready(function() {
                                         $('#product-table').DataTable({
                                             "paging": true,
-                                            "lengthMenu": [5, 10, 25, 50],
-                                            "pageLength": 5
+                                            "lengthMenu": [10, 25, 50],
+                                            "pageLength": 10
                                         });
                                     });
                                 </script>

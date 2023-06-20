@@ -9,6 +9,7 @@
     <div id="sidebar-menu">
 
         <ul id="side-menu">
+            
         <li class="menu-title">Navigation</li>
 
 <li>
@@ -40,22 +41,23 @@
 
 
 
-<li class="menu-title mt-2">Cashier</li>
+
 
 @if(Auth::user()->can('pos.menu'))
+<li class="menu-title mt-2">Cashier</li>
 <li>
 <a href="{{ route('pos') }}">
-<span class="badge bg-pink float-end">Buy</span>
-<i class="mdi mdi-view-dashboard-outline"></i>
-<span> Product </span>
+<span class="badge bg-pink float-end">Product</span>
+<i class="mdi mdi-cart"></i>
+<span> Buy </span>
 </a>
 </li>
 
 <li>
 <a href="{{ route('service.pos') }}">
-<span class="badge bg-pink float-end">Avail</span>
-<i class="mdi mdi-view-dashboard-outline"></i>
-<span> Service </span>
+<span class="badge bg-pink float-end">Service</span>
+<i class="mdi mdi-credit-card"></i>
+<span> Avail </span>
 </a>
 </li>
 
@@ -65,34 +67,13 @@
 
 
 
-            <li class="menu-title mt-2">Management</li>
+          
 
            
-@if(Auth::user()->can('employee.menu'))
-<li>
-<a href="#sidebarEcommerce" data-bs-toggle="collapse">
-<i class="mdi mdi-cart-outline"></i>
-<span> Employee Manage  </span>
-<span class="menu-arrow"></span>
-</a>
-<div class="collapse" id="sidebarEcommerce">
-<ul class="nav-second-level">
-@if(Auth::user()->can('employee.all'))
-<li>
-    <a href="{{ route('all.employee') }}">All Employee</a>
-</li>
-@endif
-@if(Auth::user()->can('employee.add'))
-<li>
-    <a href="{{ route('add.employee') }}">Add Employee </a>
-</li>
-@endif
-</ul>
-</div>
-</li>
-@endif
+
             
 @if(Auth::user()->can('customer.menu'))
+<li class="menu-title mt-2">Business</li>
 <li>
 <a href="#sidebarCrm" data-bs-toggle="collapse">
     <i class="mdi mdi-account-multiple-outline"></i>
@@ -120,7 +101,7 @@
 @if(Auth::user()->can('supplier.menu'))
 <li>
 <a href="#sidebarEmail" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-account-multiple-outline"></i>
 <span> Supplier Manage </span>
 <span class="menu-arrow"></span>
 </a>
@@ -138,10 +119,39 @@
 </li>
 @endif
 
+
+
+
+
+@if(Auth::user()->can('employee.menu'))
+<li class="menu-title mt-2">Management</li>
+<li>
+<a href="#sidebarEcommerce" data-bs-toggle="collapse">
+<i class="mdi mdi-account-multiple-outline"></i>
+<span> Employee Manage  </span>
+<span class="menu-arrow"></span>
+</a>
+<div class="collapse" id="sidebarEcommerce">
+<ul class="nav-second-level">
+@if(Auth::user()->can('employee.all'))
+<li>
+    <a href="{{ route('all.employee') }}">All Employee</a>
+</li>
+@endif
+@if(Auth::user()->can('employee.add'))
+<li>
+    <a href="{{ route('add.employee') }}">Add Employee </a>
+</li>
+@endif
+</ul>
+</div>
+</li>
+@endif
+
 @if(Auth::user()->can('salary.menu'))
 <li>
 <a href="#salary" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-wallet"></i>
 <span> Employee Salary </span>
 <span class="menu-arrow"></span>
 </a>
@@ -171,7 +181,7 @@
 @if(Auth::user()->can('attendence.menu'))
 <li>
 <a href="#attendence" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-calendar-check"></i>
 <span> Employee Attendence </span>
 <span class="menu-arrow"></span>
 </a>
@@ -187,12 +197,13 @@
 
 @endif
 
-<li class="menu-title mt-2">Product Menu</li>
+
 
 @if(Auth::user()->can('category.menu'))
+<li class="menu-title mt-2">Product Menu</li>
 <li>
 <a href="#category" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-view-list"></i>
 <span> Product Category </span>
 <span class="menu-arrow"></span>
 </a>
@@ -210,7 +221,7 @@
 @if(Auth::user()->can('product.menu'))
 <li>
 <a href="#product" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-package"></i>
 <span> Products  </span>
 <span class="menu-arrow"></span>
 </a>
@@ -232,12 +243,13 @@
 @if(Auth::user()->can('orders.menu'))
 <li>
 <a href="#orders" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-cart"></i>
 <span> Product Orders  </span>
 <span class="menu-arrow"></span>
 </a>
 <div class="collapse" id="orders">
 <ul class="nav-second-level">
+
 <li>
 <a href="{{ route('pending.order') }}">Pending Orders </a>
 </li>
@@ -245,6 +257,7 @@
 <li>
 <a href="{{ route('complete.order') }}">Complete Orders </a>
 </li>
+
 
 
 
@@ -257,7 +270,7 @@
 
 <li>
 <a href="#stock" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-archive"></i>
 <span> Inventory   </span>
 <span class="menu-arrow"></span>
 </a>
@@ -278,7 +291,7 @@
 
 <li>
 <a href="#serviceCategory" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-view-list"></i>
 <span> Service Category </span>
 <span class="menu-arrow"></span>
 </a>
@@ -296,7 +309,7 @@
 
 <li>
 <a href="#service" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-tools"></i>
 <span> Services  </span>
 <span class="menu-arrow"></span>
 </a>
@@ -319,7 +332,7 @@
 
 <li>
 <a href="#service_orders" data-bs-toggle="collapse">
-<i class="mdi mdi-email-multiple-outline"></i>
+<i class="mdi mdi-cart"></i>
 <span> Service Orders  </span>
 <span class="menu-arrow"></span>
 </a>
@@ -345,12 +358,13 @@
              
           
 
-            <li class="menu-title mt-2"></li>
+           
 
-@if(Auth::user()->can('expenses.menu'))
+@if(Auth::user()->can('expense.menu'))
+<li class="menu-title mt-2">Expenses</li>
         <li>
             <a href="#sidebarAuth" data-bs-toggle="collapse">
-                <i class="mdi mdi-account-circle-outline"></i>
+            <i class="mdi mdi-currency-usd"></i>
                 <span>Expense </span>
                 <span class="menu-arrow"></span>
             </a>

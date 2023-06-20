@@ -149,7 +149,7 @@
                 <div class="col-6">
                       <div class="text-end">
                         <h4 class="text-dark mt-1">₱<span data-plugin="counterup">{{ $total_expenses  }}</span></h4>
-                        <p> Product Expenses </p>
+                        <p> Expenses </p>
                     </div>
                 </div>
             </div> <!-- end row-->
